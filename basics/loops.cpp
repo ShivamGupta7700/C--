@@ -29,7 +29,12 @@ int main(){
         
     // }
     // std :: cout << count << '\n';
-
+    
+    do{
+        std::cout << "Hello World" <<"\n";
+    }while (3>5);
+    
+    
     for (int i = 1 ; i < 10 ; i++)
     {
         if (i%2 != 0)

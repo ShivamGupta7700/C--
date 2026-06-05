@@ -2,8 +2,20 @@
 #include <string>
 #include <climits>
 
+using namespace std;
+
+
 std:: string userData[] = {"shivam", "Abhijeet"}; //array
 int numbers[] = {1,55,768,2123,213,12,45};
+void printArray(int userInputArray[], int size){
+    for (int i = 0; i < size; i++)
+    {
+        std:: cout << userInputArray[i] << " ";
+    }
+    cout << "\n";
+    return;
+    
+}
 void basicOfArray(){
     std:: cout << "Hello World" << "\n";
     std:: cout << userData[1] << "\n";
@@ -44,12 +56,23 @@ void minimum(int userInput[] , int size){
     std:: cout << "smallest >> " << smallest <<  "\n";
 }
 
-
+void reversingArray(int userInputArray[] , int size){
+    int start = 0, end = size - 1;
+    while (start < end)
+    {
+        swap(userInputArray[start], userInputArray[end - start]); //I can make this swap funtion 
+        start++;
+    }
+    
+    
+}
 int size = sizeof(numbers) / sizeof(int);
-
+int arr[] = {1,2,3,4,5};
 
 int main(){
     // basicOfArray();
     // max(numbers, sizeof(numbers) / sizeof(int));
-    minimum(numbers, size);
+    // minimum(numbers, size);
+    reversingArray(arr , sizeof(arr) / sizeof(int));
+    printArray(arr, sizeof(arr) / sizeof(int));
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <climits>
 
 std:: string userData[] = {"shivam", "Abhijeet"}; //array
 int numbers[] = {1,55,768,2123,213,12,45};
@@ -21,7 +22,7 @@ void basicOfArray(){
     return; 
 }
 //largest / smallest in array 
-void max(int userInput[], int size){
+void maximum(int userInput[], int size){
     int biggest = userInput[0];
     for (int i = 0 ; i < size ; i++){
         if (userInput[i] > biggest){
@@ -29,9 +30,26 @@ void max(int userInput[], int size){
         }
     }
     std:: cout << biggest << "\n";
-    return;
 }
+void minimum(int userInput[] , int size){
+    int smallest = INT_MAX;
+    for ( int i = 0; i < size;  i++)
+    {
+        if (userInput[i] < smallest)
+        {
+            smallest = userInput[i];
+        }
+        
+    }
+    std:: cout << "smallest >> " << smallest <<  "\n";
+}
+
+
+int size = sizeof(numbers) / sizeof(int);
+
+
 int main(){
-    basicOfArray();
-    max(numbers, sizeof(numbers) / sizeof(int));
+    // basicOfArray();
+    // max(numbers, sizeof(numbers) / sizeof(int));
+    minimum(numbers, size);
 }

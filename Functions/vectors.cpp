@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 
 using namespace std;
 void printVectorValues(vector <int> vec){
@@ -59,13 +60,32 @@ void pairSum(vector<int> vec, int target){
     }
     
 }
-
+void majorityElements(vector<int> vec){
+    int freq = 0 , ans = 0 ;
+    for (int i = 0; i < vec.size() ; i++)
+    {
+        if (freq == 0)
+        {
+            ans = vec[i];
+        }
+        if (ans == vec[i])
+        {
+            freq++;
+        }
+        else{
+            freq--;
+        }
+        
+    }
+    cout << ans << endl;
+    
+}
 int main(){
     int trailArr[] = {1,213,-1000,13,1900,1,7,2,9,8};
-    vector <int> vect = {1, 2, 3, 4, 5};
+    vector <int> vect = {1, 2, 3, 4, 5, 1, 5, 1 , 1, 5, 1, 8}; // 1,2,1,2,1
     // cout << "size (initial): " << vect.size() << endl;
     // vect.push_back(9);
-    // vector <int> defalutVector(5,0);
+    // vector <int> defalutVector(5,0); 
    
     // // printVectorValues(defalutVector);
     // cout <<"size : " << vect.size() << "\n" << "After POP --->" << " "; //size of vector 
@@ -79,8 +99,8 @@ int main(){
     // reverseVector(vect); 
     // printVectorValues(vect); // not changed like array for change use & (pass by refrence)
     // maximumSubArray(trailArr, sizeof(trailArr) / sizeof(int));
-    pairSum(vect, 9);
-
+    // pairSum(vect, 9);
+    majorityElements(vect);
    
     return 0;
 }

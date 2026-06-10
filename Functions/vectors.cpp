@@ -101,6 +101,7 @@ int main(){
     // maximumSubArray(trailArr, sizeof(trailArr) / sizeof(int));
     // pairSum(vect, 9);
     majorityElements(vect);
+    printVectorValues(vect);
    
     return 0;
 }
